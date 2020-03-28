@@ -1,0 +1,418 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme form 'form/form_errors.html.twig' %}
+
+
+{% block body %}
+
+    {{ form_errors(form) }}
+
+
+    <div class="container">
+
+        {% block info %}
+            <strong><span class="glyphicon glyphicon-warning-sign"></span> Importante</strong> <br><br>
+            <p> -Los campos marcados con * son obligatorios.</p>
+            <p>-Debes asegurarte que el archivo a enviar a través de este formulario sea de un tamaño menor a 2MB y en formato PDF.</p>
+            <p class="text-justify">-Se enviará un correo al profesor que te recomienda para solicitarle que nos
+                proporcione tu carta de recomendación, por lo que  debes asegurarte de
+                escribir correctamente su dirección de correo.</p>
+            <p class="text-justify">-Al finalizar el envío de este formulario debes de visualizar una pantalla de confirmación. Además, recibirás un correo electrónico a la cuenta que proporcionaste,
+                de no ser así favor de revisar tu carpeta de correos no desados o comunicarte al correo <strong>webmaster@matmor.unam.mx</strong> para asegurarte que hayamos recibido tu solicitud.
+            </p>
+            -Fecha límite para realizar tu registro: <mark>29 de mayo de 2020</mark>.
+        {% endblock %}
+
+        {{ form_start(form) }}
+
+        <h1><small><i class="fa fa-user"></i> Datos personales</small></h1>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div>
+                                    {{ form_label(form.nombre) }}
+                                </div>
+                                <div>
+                                    {{ form_widget(form.nombre,{'attr': {'class': 'form-control input-sm', 'placeholder':'Nombre'} } ) }}
+                                </div>
+                                <div>{{ form_errors(form.nombre) }}</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div>
+                                    {{ form_label(form.paterno) }}
+                                </div>
+                                <div>
+                                    {{ form_widget(form.paterno, {'attr': {'class': 'form-control input-sm', 'placeholder':'Apellido paterno'} } ) }}
+                                </div>
+                                <div>{{ form_errors(form.paterno) }}</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div>
+                                    {{ form_label(form.materno) }}
+                                </div>
+                                <div>
+                                    {{ form_widget(form.materno, {'attr': {'class': 'form-control input-sm','placeholder':'Opcional en caso de ser extranjero'} } ) }}
+                                </div>
+                                <div>{{ form_errors(form.materno) }}</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div >
+                                    {{ form_label(form.sexo) }}
+                                </div>
+                                <div>
+                                    {% spaceless %}
+                                        {% for child in form.sexo %}
+                                            <div class="radio-inline">
+                                                {{ form_widget(child) }}  {{ form_label(child, null, {'label_attr': {'class': 'btn btn-default btn-xs'}}) }}
+                                            </div>
+                                        {% endfor %}
+                                    {% endspaceless %}
+                                </div>
+                                <div>{{ form_errors(form.sexo) }}</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <div>{{ form_label(form.nacimiento) }}</div>
+                                <div class="col-lg-4" >{{ form_widget(form.nacimiento.day, {'attr': {'class': 'form-control input-sm'} } ) }}</div>
+                                <div class="col-lg-4" >{{ form_widget(form.nacimiento.month, {'attr': {'class': 'form-control input-sm'} } ) }}</div>
+                                <div class="col-lg-4" >{{ form_widget(form.nacimiento.year, {'attr': {'class': 'form-control input-sm'} } ) }}</div>
+                                <div>{{ form_errors(form.nacimiento) }}</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4" >
+                            <div class="form-group">
+                                <div>{{ form_label(form.mail) }}</div>
+                                <div>{{ form_widget(form.mail, {'attr': {'class': 'form-control input-sm', 'placeholder':'Correo electrónico'} } ) }}</div>
+                                <div>{{ form_errors(form.mail) }}</div><br>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4" >
+                            <div class="form-group">
+                                <div>{{ form_label(form.tel) }}</div>
+                                <div>{{ form_widget(form.tel, {'attr': {'class': 'form-control input-sm', 'placeholder':'55 1234 5678'} } ) }}</div>
+                                <div>{{ form_errors(form.tel) }}</div><br>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <h1><small><i class="fa fa-book"></i> Datos académicos</small></h1>
+
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <div class="col-lg-4" >
+                                <div>{{ form_label(form.procedencia) }}</div>
+                                <div>{{ form_widget(form.procedencia, {'attr': {'class': 'form-control input-sm' , 'placeholder':'Universidad de procedencia'} } ) }}</div>
+                                <div>{{ form_errors(form.procedencia) }}</div>
+                            </div>
+                            <div class="col-md-4" >
+                                <div>{{ form_label(form.carrera) }}</div>
+                                <div>{{ form_widget(form.carrera, {'attr': {'class': 'form-control input-sm', 'placeholder':'Carrera'} } ) }}</div>
+                                <div>{{ form_errors(form.carrera) }}</div><br>
+                            </div>
+                            <div class="col-md-4" >
+                                <div>{{ form_label(form.semestre) }}</div>
+                                <div>{{ form_widget(form.semestre, {'attr': {'class': 'form-control input-sm', 'placeholder':'Semestre o cuatrimestre'} } ) }}</div>
+                                <div>{{ form_errors(form.semestre) }}</div><br>
+                            </div>
+                            <div class="col-md-4" >
+                                <div>{{ form_label(form.porcentaje) }}</div>
+                                <div>{{ form_widget(form.porcentaje, {'attr': {'class': 'form-control input-sm'} } ) }}</div>
+                                <div>{{ form_errors(form.porcentaje) }}</div><br>
+                            </div>
+                            <div class="col-md-4" >
+                                <div>{{ form_label(form.promedio) }}</div>
+                                <div>{{ form_widget(form.promedio, {'attr': {'class': 'form-control input-sm'} } ) }}</div>
+                                <div>{{ form_errors(form.promedio) }}</div><br>
+                            </div>
+
+                            <div class="col-md-4" >
+                                <div>{{ form_label(form.profesor) }}</div>
+                                <div>{{ form_widget(form.profesor, {'attr': {'class': 'form-control input-sm', 'placeholder':'Nombre del profesor que lo recomienda'} } ) }}</div>
+                                <div>{{ form_errors(form.profesor) }}</div><br>
+                            </div>
+                            <div class="col-md-4" >
+                                <div>{{ form_label(form.univprofesor) }}</div>
+                                <div>{{ form_widget(form.univprofesor, {'attr': {'class': 'form-control input-sm', 'placeholder':'Universidad del profesor'} } ) }}</div>
+                                <div>{{ form_errors(form.univprofesor) }}</div><br>
+                            </div>
+
+                            <div class="col-md-8" >
+                                <div>{{ form_label(form.mailprofesor) }}</div>
+                            </div>
+                            <div class="col-md-4" >
+                                <div>{{ form_widget(form.mailprofesor, {'attr': {'class': 'form-control input-sm', 'placeholder':'Correo del profesor'} } ) }}</div>
+                                <div>{{ form_errors(form.mailprofesor) }}</div><br>
+                            </div>
+                            <div class="col-md-12" >
+                                <div>{{ form_widget(form.historialFile) }}</div>
+                                <div>{{ form_errors(form.historialFile) }}</div><br>
+                            </div>
+                            <div class="col-md-12" >
+                                <div class="alert alert-dismissable alert-warning">
+                                    <span class="glyphicon glyphicon-exclamation-sign"></span>
+                                    El archivo que selecciones debe estar en formato <i class="fa fa-file-pdf-o"></i>
+                                    PDF y tener un tamaño menor a 2MB.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1><small><i class="fa fa-clock-o"></i> Participaciones anteriores</small></h1>
+
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <div class="col-lg-6" >
+                                <div>{{ form_label(form.participado) }}</div>
+                                <div>
+                                    {% spaceless %}
+                                        {% for child in form.participado %}
+                                            <div class="radio-inline">
+                                                {{ form_widget(child) }}  {{ form_label(child, null, {'label_attr': {'class': 'btn btn-default btn-xs'}}) }}
+                                            </div>
+                                        {% endfor %}
+                                    {% endspaceless %}
+                                </div>
+                                <div>{{ form_errors(form.participado) }}</div>
+                            </div>
+                            <div class="col-lg-6" >
+                                <div>{{ form_label(form.evento) }}</div>
+                                <div>{{ form_widget(form.evento, {'attr': {'class': 'form-control input-sm', 'placeholder':'Año, evento y lugar donde ha participado'} } ) }}</div>
+                                <div>{{ form_errors(form.evento) }}</div><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1><small><i class="fa fa-calculator"></i> {{ evento }}</small></h1>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-6" >
+                            <div>{{ form_label(form.beca) }}</div>
+                            <div>{{ form_widget(form.beca, {'attr': {'class': 'form-control input-sm'} } ) }}</div>
+                            <div>{{ form_errors(form.beca) }}</div>
+                        </div>
+                        <div class="col-md-6" >
+                            <div>{{ form_label(form.vegetariano) }}</div>
+                            <div>
+                                {% spaceless %}
+                                    {% for child in form.vegetariano %}
+                                        <div class="radio-inline">
+                                            {{ form_widget(child) }}  {{ form_label(child, null, {'label_attr': {'class': 'btn btn-default btn-xs'}}) }}
+                                        </div>
+                                    {% endfor %}
+                                {% endspaceless %}
+                            </div>
+                            <div>{{ form_errors(form.vegetariano) }}</div>
+                        </div>
+
+                        <div class="col-md-12"><br><p>El participante  deberá tomar tres cursos, las opciones a elegir son las siguientes:</p></div>
+                        <div class="col-md-6" >
+                            <div>{{ form_label(form.cursog1) }}</div>
+                            <a type="button"  class="btn btn-primary btn-xs" data-toggle="modal" data-target=".g1"><i class="fa fa-external-link" aria-hidden="true"></i>
+                                Consultar cursos</a>
+                            <div>
+                                <br>{{ form_widget(form.cursog1, {'attr': {'class': 'form-control input-sm'} } ) }}</div>
+                            <div>{{ form_errors(form.cursog1) }}</div>
+                        </div>
+
+
+                        <div class="col-md-6" >
+                            <div>{{ form_label(form.cursog2) }}</div>
+                            <a type="button"  class="btn btn-primary btn-xs" data-toggle="modal" data-target=".temarios"><i class="fa fa-external-link" aria-hidden="true"></i>
+                                Consultar cursos</a>
+                            <div>
+
+                                <br>{{ form_widget(form.cursog2, {'attr': {'class': 'form-control input-sm'} } ) }}</div>
+                            <div>{{ form_errors(form.cursog2) }}</div>
+                        </div>
+
+                        <div class="col-md-6" ><br>
+                            <div>{{ form_label(form.cursog3) }}</div>
+                            <a type="button"  class="btn btn-primary btn-xs" data-toggle="modal" data-target=".temarios"><i class="fa fa-external-link" aria-hidden="true"></i>
+                                Consultar cursos</a>
+                            <div>
+
+                                <br>{{ form_widget(form.cursog3, {'attr': {'class': 'form-control input-sm'} } ) }}</div>
+                            <div>{{ form_errors(form.cursog3) }}</div>
+                        </div>
+
+
+                        <div class="col-md-8" ><br>
+                            <div>{{ form_label(form.razones) }}</div>
+                            <div>{{ form_widget(form.razones, {'attr': {'class': 'form-control input-sm', 'rows':'5', 'placeholder':'Razones por las que desea entrar a la escuela'} } ) }}</div>
+                            <div>{{ form_errors(form.razones) }}</div><br>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <h1><small><i class="fa fa-file"></i> Examen de admisión al Posgrado Conjunto en Ciencias Matemáticas UNAM-UMSNH 2019</small></h1>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-4" >
+                            <div>{{ form_label(form.examen) }}</div>
+                            <div>
+                                {% spaceless %}
+                                    {% for child in form.examen %}
+                                        <div class="radio-inline">
+                                            {{ form_widget(child) }}  {{ form_label(child, null, {'label_attr': {'class': 'btn btn-default btn-xs'}}) }}
+                                        </div>
+                                    {% endfor %}
+                                {% endspaceless %}
+                            </div>
+                        </div>
+                        <div class="col-md-12" >
+                            <br>
+                            <p class="text-justify">
+                                En caso de que su respuesta sea afirmativa: para poder presentar el <strong>examen de admisión</strong> al
+                                Posgrado Conjunto en Ciencias Matemáticas es necesario mandar por correo electrónico y con
+                                asunto "Admisión Escuela de Verano" a la L.A.E. Morelia Álvarez Llanes <br><i class="fa fa-envelope"></i> malvarez<i class="fa fa-at"></i>matmor.unam.mx
+                                los siguientes documentos:<br><br>
+
+
+                                <a href="http://pccm.umich.unam.mx/files/convocatorias/2020-1/SolicitudIngresoMyD2020-1.pdf" target="_blank"> <i class="fa fa-download"></i> Solicitud de ingreso debidamente llenada.</a> <br>
+                                <i class="fa fa-check"></i> Historial académico o certificado de calificaciones.<br>
+                                <i class="fa fa-check"></i> Curriculum Vitae.<br>
+                                <i class="fa fa-check"></i> Una foto del solicitante.<br>
+                                <br>
+                                Esta información debe ser enviada a más tardar el <strong>24 de mayo de 2019</strong>. Si dicha información no es recibida en la fecha establecida el solicitante no podrá realizar el examen.
+                            </p>
+
+                        </div>
+                        <div>{{ form_errors(form.examen) }}</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-7 col-lg-offset-5">
+            <input type="submit" value="Enviar"  class="btn btn-primary"/>
+
+            {{ form_end(form) }}
+
+
+        </div>
+    </div>
+
+
+
+    <!-- Large modal -->
+
+    <div class="modal fade g1" tabindex="-1" role="dialog" aria-labelledby="g1">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Cursos G1</h4>
+                </div>
+                <div class="modal-body">
+                    <p><strong>A1 - ¿Como construir una teoría física?, <em>Dr. Robert Oeckl</em></strong></p>
+                    <p class="text-justify"><strong>Resumen:</strong> Basándonos en nociones de medición, probabilidad y correlación reconstruiremos
+                    los fundamentos de que es una teoría física. Encontraremos tanto la física clásica como la
+                    física cuántica como posibilidades y entenderemos algunas de sus diferencias. El concepto
+                    matemático detrás es el de un espacio vectorial parcialmente ordenado. A pesar de su
+                    aparente simplicidad, el material tratado en el curso surge de un reciente acercamiento a la unificación
+                        de la teoría cuántica con la relatividad general (pero casi no hablaremos de eso).</p>
+                    <hr>
+                    <p><strong>B1 - El lema de Milnor-Schwarz, el teorema fundamental de la teoría geométrica de
+                            grupos, <em>Dr. Noé Bárcenas</em></strong></p>
+                    <p class="text-justify"><strong>Resumen:</strong> Analizaremos el que se conoce como el teorema fundamental de la teoría
+                        geométrica de grupos y daremos un panorama amplio de sus aplicaciones en geometría
+                        diferencial, topología de variedades, teoría de grupos, así como un vistazo a resultados en
+                        Rigidez.</p>
+                    <hr>
+                    <p><strong>C1 - Introducción a la teoría de Caracteres de grupos finitos, <em>Dr. Gerardo Raggi Cárdenas</em></strong></p>
+                    <p class="text-justify"><strong>Resumen:</strong>
+                    <ol>
+                        <li>Repaso de teoría de grupos.</li>
+                        <li>El álgebra de grupo CG para un grupo finito G.</li>
+                        <li>Módulos y el Teorema de Wedderburn para CG.</li>
+                        <li>Caracteres y sus tablas</li>
+                        <li>Todo grupo de orden |G| = p^a q^b , donde p y q son primos no es simple.</li>
+                    </ol>
+                    </p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {#
+            {{ form_widget(form) }}
+        {{ form_end(form) }}
+
+        <ul>
+            <li>
+                <a href="{{ path('form_index') }}">Back to the list</a>
+            </li>
+        </ul> #}
+
+{% endblock %}
+
+    {% block footer %}
+        <div class="container">
+            <br><br>
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <ul class="list-unstyled">
+                            <li class="pull-right">
+                                <a href="#top"><i class="fa fa-arrow-circle-up"></i> Subir</a>
+                            </li>
+                        </ul>
+                        {# <p><a href="http://matmor.unam.mx" rel="nofollow"><img src="{{ asset('bundles/ccmesver14esver/images/ccm-color.png') }}" alt="Logo CCM" width="121px" height="35px"/></a></p>
+                           <p><a href="http://unam.mx" rel="nofollow">UNAM</a></p>
+                         #}
+                    </div>
+                </div>
+            </footer>
+        </div>
+    {% endblock %}
