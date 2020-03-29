@@ -81,12 +81,12 @@ vich_uploader:
 
     mappings:
         esver19_carta:
-            uri_prefix:         /esver19/submissions
+            uri_prefix:         /esver20/submissions
             upload_destination: %kernel.root_dir%/../web/submissions
             namer:              vich_uploader.namer_uniqid
 
         esver19_historial:
-            uri_prefix:         /esver19/submissions
+            uri_prefix:         /esver20/submissions
             upload_destination: %kernel.root_dir%/../web/submissions
             namer:              vich_uploader.namer_uniqid
 

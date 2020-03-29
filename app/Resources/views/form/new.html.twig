@@ -251,7 +251,7 @@
 
                         <div class="col-md-6" >
                             <div>{{ form_label(form.cursog2) }}</div>
-                            <a type="button"  class="btn btn-primary btn-xs" data-toggle="modal" data-target=".temarios"><i class="fa fa-external-link" aria-hidden="true"></i>
+                            <a type="button"  class="btn btn-primary btn-xs" data-toggle="modal" data-target=".g2"><i class="fa fa-external-link" aria-hidden="true"></i>
                                 Consultar cursos</a>
                             <div>
 
@@ -261,7 +261,7 @@
 
                         <div class="col-md-6" ><br>
                             <div>{{ form_label(form.cursog3) }}</div>
-                            <a type="button"  class="btn btn-primary btn-xs" data-toggle="modal" data-target=".temarios"><i class="fa fa-external-link" aria-hidden="true"></i>
+                            <a type="button"  class="btn btn-primary btn-xs" data-toggle="modal" data-target=".g3"><i class="fa fa-external-link" aria-hidden="true"></i>
                                 Consultar cursos</a>
                             <div>
 
@@ -284,48 +284,6 @@
             </div>
         </div>
 
-        <h1><small><i class="fa fa-file"></i> Examen de admisión al Posgrado Conjunto en Ciencias Matemáticas UNAM-UMSNH 2019</small></h1>
-
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="row">
-                    <div class="form-group">
-                        <div class="col-md-4" >
-                            <div>{{ form_label(form.examen) }}</div>
-                            <div>
-                                {% spaceless %}
-                                    {% for child in form.examen %}
-                                        <div class="radio-inline">
-                                            {{ form_widget(child) }}  {{ form_label(child, null, {'label_attr': {'class': 'btn btn-default btn-xs'}}) }}
-                                        </div>
-                                    {% endfor %}
-                                {% endspaceless %}
-                            </div>
-                        </div>
-                        <div class="col-md-12" >
-                            <br>
-                            <p class="text-justify">
-                                En caso de que su respuesta sea afirmativa: para poder presentar el <strong>examen de admisión</strong> al
-                                Posgrado Conjunto en Ciencias Matemáticas es necesario mandar por correo electrónico y con
-                                asunto "Admisión Escuela de Verano" a la L.A.E. Morelia Álvarez Llanes <br><i class="fa fa-envelope"></i> malvarez<i class="fa fa-at"></i>matmor.unam.mx
-                                los siguientes documentos:<br><br>
-
-
-                                <a href="http://pccm.umich.unam.mx/files/convocatorias/2020-1/SolicitudIngresoMyD2020-1.pdf" target="_blank"> <i class="fa fa-download"></i> Solicitud de ingreso debidamente llenada.</a> <br>
-                                <i class="fa fa-check"></i> Historial académico o certificado de calificaciones.<br>
-                                <i class="fa fa-check"></i> Curriculum Vitae.<br>
-                                <i class="fa fa-check"></i> Una foto del solicitante.<br>
-                                <br>
-                                Esta información debe ser enviada a más tardar el <strong>24 de mayo de 2019</strong>. Si dicha información no es recibida en la fecha establecida el solicitante no podrá realizar el examen.
-                            </p>
-
-                        </div>
-                        <div>{{ form_errors(form.examen) }}</div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
     </div>
 
     <div class="row">
@@ -340,8 +298,7 @@
 
 
 
-    <!-- Large modal -->
-
+    <!-- Large modal G1 -->
     <div class="modal fade g1" tabindex="-1" role="dialog" aria-labelledby="g1">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -352,10 +309,10 @@
                 <div class="modal-body">
                     <p><strong>A1 - ¿Como construir una teoría física?, <em>Dr. Robert Oeckl</em></strong></p>
                     <p class="text-justify"><strong>Resumen:</strong> Basándonos en nociones de medición, probabilidad y correlación reconstruiremos
-                    los fundamentos de que es una teoría física. Encontraremos tanto la física clásica como la
-                    física cuántica como posibilidades y entenderemos algunas de sus diferencias. El concepto
-                    matemático detrás es el de un espacio vectorial parcialmente ordenado. A pesar de su
-                    aparente simplicidad, el material tratado en el curso surge de un reciente acercamiento a la unificación
+                        los fundamentos de que es una teoría física. Encontraremos tanto la física clásica como la
+                        física cuántica como posibilidades y entenderemos algunas de sus diferencias. El concepto
+                        matemático detrás es el de un espacio vectorial parcialmente ordenado. A pesar de su
+                        aparente simplicidad, el material tratado en el curso surge de un reciente acercamiento a la unificación
                         de la teoría cuántica con la relatividad general (pero casi no hablaremos de eso).</p>
                     <hr>
                     <p><strong>B1 - El lema de Milnor-Schwarz, el teorema fundamental de la teoría geométrica de
@@ -376,6 +333,104 @@
                     </ol>
                     </p>
                 </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Large modal G2 -->
+    <div class="modal fade g2" tabindex="-1" role="dialog" aria-labelledby="g2">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Cursos G2</h4>
+                </div>
+                <div class="modal-body">
+                    <p><strong>A2 - Construyendo el espacio-tiempo, <em>Dr. Alejandro Corichi Rodriguéz Gil</em></strong></p>
+                    <p class="text-justify"><strong>Resumen:</strong> El espacio-tiempo es el escenario en el que todos los fenómenos físicos
+                        transcurren, pero un entendimiento de qué es y cómo podemos describirlo necesita de una
+                        serie de pasos tanto físicos como matemáticos. En el curso daremos estos pasos para ir
+                        avanzando de manera constructiva y así llegar a la teoría moderna que describe estos
+                        fenómenos, la relatividad general.</p>
+                    <hr>
+                    <p><strong>B2 - Geometría hiperbólica , <em>Dr. Jesús Hernández Hernández</em></strong></p>
+                    <p class="text-justify"><strong>Resumen:</strong> En este curso veremos los elementos básicos para el estudio de la geometría
+                        hiperbólica en dos dimensiones. Empezando por la introducción de dos modelos,
+                        estudiaremos varios resultados clásicos y representativos de esta geometría como lo son la
+                        suma de los ángulos internos de un triángulo, así como la clasificación de sus isometrías.
+                        Posteriormente veremos cómo la geometría de subgrupos de isometrías está relacionada
+                        con la geometría del plano hiperbólico, mostrando así un resultado que se volvió modelo a
+                        seguir y ejemplo del resultado fundamental de teoría geométrica de grupos.</p>
+                    <hr>
+                    <p><strong>C2 - Introducción a la teoría estadística de los valores extremos, <em>Dr. Eugenio Balanzario Gutiérrez</em></strong></p>
+                    <p class="text-justify"><strong>Resumen:</strong>
+                        Comenzaremos este curso breve explicando la noción de “cola de una
+                        distribución de probabilidad”. Serán de nuestro interés las distribuciones de cola pesada y la
+                        forma de cómo éstas modelan fenómenos económicos, financieros y naturales que tienen el
+                        potencial de alcanzar valores máximos muy alejados de lo que se observa en promedio. En
+                        el caso de fenómenos naturales, los valores extremos observados suelen poner en riesgo
+                        tanto el patrimonio como la vida misma de poblaciones humanas. Se mostrará cómo al
+                        graficar los datos de una muestra aleatoria en papel log-log, se puede identificar si la muestra
+                        proviene de una distribución de cola pesada. Se explicará cómo algunas distribuciones de
+                        cola pesada sirven como distribuciones límite de sumas de variables aleatorias, pero más
+                        importante para nosotros será el determinar las distribuciones límite de los valores máximos
+                        de muestras aleatorias. En el curso también se aborda el problema de la estimación de los
+                        parámetros que determinan una distribución de cola pesada dentro de su familia paramétrica.
+                        Finalmente, se discutirá sobre las desviaciones empíricas de conjuntos de datos de la vida
+                        real a los modelos clásicos de distribuciones de cola pesada, dando lugar a modelos de cola
+                        pesada temperados en los valores más extremos. Este curso breve puede considerarse
+                        como una primera introducción al libro “Modelling Extremal Events: for Insurance and
+                        Finance” de los autores Embrechts, Klüppelberg y Mikosch.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Large modal G3 -->
+    <div class="modal fade g3" tabindex="-1" role="dialog" aria-labelledby="g3">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Cursos G3</h4>
+                </div>
+                <div class="modal-body">
+                    <p><strong>A3 - La generalización del electromagnetismo que modela las fuerzas fundamentales, <em>Dr. José A. Zapata Ramírez</em></strong></p>
+                    <p class="text-justify"><strong>Resumen:</strong> Veremos que el campo electromagnético puede describirse geométricamente en
+                        términos de un tal “transporte paralelo”. Esta imagen sugiere una “generalización no
+                        abeliana” del electromagnetismo llamada la teoría de Yang-Mills. Aunque sus autores no la
+                        concibieron con ese propósito, resultó que la contraparte cuántica de esta teoría es la base
+                        del modelo estándar de la física de partículas elementales.</p>
+                    <hr>
+                    <p><strong>B3 - Espacios métricos de curvatura negativa, <em>Dr. J. Ferrán Valdez Lorenzo</em></strong></p>
+                    <p class="text-justify"><strong>Resumen:</strong> En este curso presentaremos una de las posibles nociones de curvatura negativa
+                        en espacios métricos: la hiperbolicidad de Gromov. Primero introduciremos todos los
+                        conceptos necesarios para su entendimiento, para después ver diferentes propiedades que
+                        se obtienen como consecuencia de la hiperbolicidad. Posteriormente, veremos que este
+                        concepto de curvatura negativa es invariante bajo funciones a gran escala, lo cual nos
+                        permite hacer uso de las herramientas de teoría geométrica de grupos para crear la noción
+                        de un grupo hiperbólico.</p>
+                    <hr>
+                    <p><strong>C3 - Carcajes y álgebras de conglomerado, <em>Dr. J. Bosco Frías Medina</em></strong></p>
+                    <p class="text-justify"><strong>Resumen:</strong>
+                        Sergey Fomin y Andrei Zelevinsky introdujeron en 2001 las álgebras de
+                        conglomerado: éstas son una clase especial de anillos conmutativos que cuentan con un
+                        conjunto distinguido de generadores, que se conocen como variables de conglomerado, que
+                        están agrupados en conjuntos que no son disjuntos y que tienen la misma cardinalidad, que
+                        se conocen como conglomerados. Además, los conglomerados están relacionados entre
+                        ellos mediante una estructura combinatoria adicional. En este curso realizaremos la
+                        construcción de una álgebra de conglomerado a partir de un carcaj, para ello definiremos los
+                        conceptos de semillas y mutación. Asimismo, revisaremos algunos ejemplos y algunas
+                        relaciones que se presentan con objetos geométricos.
+                    </p>
+                </div>
+
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

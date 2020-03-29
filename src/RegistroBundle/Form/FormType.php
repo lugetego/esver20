@@ -52,7 +52,7 @@ class FormType extends AbstractType
                     'year' => 'Año',
                     'month' => 'Mes',
                     'day' => 'Día'),
-                'years'=> range(1980,2001),
+                'years'=> range(1980,2002),
                 'label'=>'*Fecha de nacimiento',
                 'required'=>true,
 
@@ -80,7 +80,7 @@ class FormType extends AbstractType
 
             ))
             ->add('porcentaje', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType',array(
-                'label'=>'*Porcentaje de avance (hasta marzo 2019)',
+                'label'=>'*Porcentaje de avance (hasta marzo 2020)',
                 'choices'=>array(
                     '50'=>'50',
                     '60'=>'60',
@@ -180,10 +180,9 @@ class FormType extends AbstractType
             ->add('cursog2', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType',array(
                 'label'=>'*Selecciona tu curso de G2',
                 'choices'=>array(
-                    'Álgebra Lineal, Curso 2, Curso 3 y Curso 4' => 'Álgebra Lineal, Curso 2, Curso 3 y Curso 4',
-                    'Álgebra Lineal, Cálculo Diferencial e Integral, Curso 3 y Curso 4' => 'Álgebra Lineal, Cálculo Diferencial e Integral, Curso 3 y Curso 4',
-                    'Curso 1, Curso 2, Curso 3 y Curso 4' => 'Curso 1, Curso 2, Curso 3 y Curso 4',
-                    'Cálculo Diferencial e Integral, Curso 1, Curso 3 y Curso 4'=> 'Cálculo Diferencial e Integral, Curso 1, Curso 3 y Curso 4',
+                    'A2- Construyendo el espacio-tiempo' => 'A2 - Construyendo el espacio-tiempo',
+                    'B2 - Geometría hiperbólica' => ' B2 - Geometría hiperbólica',
+                    'C2  - Introducción a la teoría estadística de los valores extremos' => 'C2 - Introducción a la teoría estadística de los valores extremos',
                 ),
                 'placeholder'=>'Seleccionar',
                 'required'=>true,
@@ -192,10 +191,9 @@ class FormType extends AbstractType
             ->add('cursog3', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType',array(
                 'label'=>'*Selecciona tu curso de G3',
                 'choices'=>array(
-                    'Álgebra Lineal, Curso 2, Curso 3 y Curso 4' => 'Álgebra Lineal, Curso 2, Curso 3 y Curso 4',
-                    'Álgebra Lineal, Cálculo Diferencial e Integral, Curso 3 y Curso 4' => 'Álgebra Lineal, Cálculo Diferencial e Integral, Curso 3 y Curso 4',
-                    'Curso 1, Curso 2, Curso 3 y Curso 4' => 'Curso 1, Curso 2, Curso 3 y Curso 4',
-                    'Cálculo Diferencial e Integral, Curso 1, Curso 3 y Curso 4'=> 'Cálculo Diferencial e Integral, Curso 1, Curso 3 y Curso 4',
+                    'A3 - La generalización del electromagnetismo que modela las fuerzas fundamentales' => 'A3 - La generalización del electromagnetismo que modela las fuerzas fundamentales',
+                    'B3 - Espacios métricos de curvatura negativa.' => 'B3 - Espacios métricos de curvatura negativa.',
+                    'C3 - Carcajes y álgebras de conglomerado' => 'C3 - Carcajes y álgebras de conglomerado',
                 ),
                 'placeholder'=>'Seleccionar',
                 'required'=>true,
@@ -231,17 +229,7 @@ class FormType extends AbstractType
                 'required'=>false,
 
             ))
-            ->add('examen', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', array(
-                'choices'   => array(
-                    true => 'Si',
-                    false => 'No'),
-                'expanded' => true,
-                'multiple' => false,
-                'required'  => true,
-                'choices_as_values' => false,
-                'label'=>'¿Deseas realizar el examen de admisión?'
 
-            ))
             ->add('confirmado', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', array(
                 'choices'=>array(
                     true=>'Si',

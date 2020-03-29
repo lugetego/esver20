@@ -53,7 +53,6 @@ class Form
      * @var string
      *
      * @ORM\Column(name="materno", type="string", length=50, nullable=true)
-     * @Assert\NotBlank()
      */
     private $materno;
 
@@ -319,14 +318,6 @@ class Form
      * @ORM\Column(name="slug", type="string", length=60, unique=true)
      */
     private $slug;
-
-
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="examen", type="boolean", nullable=true)
-     */
-    private $examen;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -1050,22 +1041,6 @@ class Form
     public function setRecomendacion($recomendacion)
     {
         $this->recomendacion = $recomendacion;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isExamen()
-    {
-        return $this->examen;
-    }
-
-    /**
-     * @param boolean $examen
-     */
-    public function setExamen($examen)
-    {
-        $this->examen = $examen;
     }
 
     /**
