@@ -290,6 +290,17 @@ class Form
      */
     private $razones;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="infadicional", type="text" , nullable=true)
+     * @Assert\Length(
+     *      max = 2000,
+     *      maxMessage = "No se permiten más de {{ limit }} caracteres"
+     * )
+     */
+    private $infadicional;
+
 
     /**
      * @var string
@@ -1058,6 +1069,24 @@ class Form
     {
         $this->slug = $slug;
     }
+
+    /**
+     * @return string
+     */
+    public function getInfadicional()
+    {
+        return $this->infadicional;
+    }
+
+    /**
+     * @param string $infadicional
+     */
+    public function setInfadicional($infadicional)
+    {
+        $this->infadicional = $infadicional;
+    }
+
+
 
 
 }

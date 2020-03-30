@@ -270,12 +270,17 @@
                         </div>
 
 
-                        <div class="col-md-8" ><br>
+                        <div class="col-md-12" ><br>
                             <div>{{ form_label(form.razones) }}</div>
-                            <div>{{ form_widget(form.razones, {'attr': {'class': 'form-control input-sm', 'rows':'5', 'placeholder':'Razones por las que desea entrar a la escuela'} } ) }}</div>
-                            <div>{{ form_errors(form.razones) }}</div><br>
+                            <div>{{ form_widget(form.razones, {'attr': {'class': 'form-control input-sm', 'rows':'4', 'placeholder':'Razones por las que desea entrar a la escuela'} } ) }}</div>
+                            <div>{{ form_errors(form.razones) }}</div>
                         </div>
 
+                        <div class="col-md-12" ><br>
+                            <div>{{ form_label(form.infadicional) }}</div>
+                            <div>{{ form_widget(form.infadicional, {'attr': {'class': 'form-control input-sm', 'rows':'4', 'placeholder':'Información adicional que desee darle a conocer al comité organizador, como alergias, alojamiento o problemas de salud'} } ) }}</div>
+                            <div>{{ form_errors(form.infadicional) }}</div><br>
+                        </div>
 
 
                     </div>

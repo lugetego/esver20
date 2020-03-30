@@ -219,6 +219,11 @@ class FormType extends AbstractType
                 'required'=>true,
 
             ))
+            ->add('infadicional', 'Symfony\Component\Form\Extension\Core\Type\TextareaType',array(
+                'label'=>'Información adicional que desee darle a conocer al comité organizador, como alergias, alojamiento o problemas de salud',
+                'required'=>true,
+
+            ))
             ->add('comentarios', 'Symfony\Component\Form\Extension\Core\Type\TextareaType',array(
                 'label'=>'Comentarios',
                 'required'=>false,
