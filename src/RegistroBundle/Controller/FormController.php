@@ -147,6 +147,7 @@ class FormController extends Controller
         $editForm->remove('evento');
         $editForm->remove('beca');
         $editForm->remove('razones');
+        $editForm->remove('infadicional');
         $editForm->remove('vegetariano');
         $editForm->remove('cursog1');
         $editForm->remove('cursog2');
