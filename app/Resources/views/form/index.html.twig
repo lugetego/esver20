@@ -19,20 +19,9 @@
                     <li class="list-group-item">
                         <span class="badge">{{ registros|length }}</span>
                          Registros <br>
-                        {% set examen = 0 %}
-                        {% for registro in registros %}
-                            {% if registro.examen == true %}
-                                {% set examen = examen + 1 %}
-                            {% endif %}
-                        {% endfor %}
-
-                        <span class="badge">{{ examen }}</span>
-                        Examen admisión al PCCM
+                       &nbsp;
                     </li>
-
-
                 </ul>
-
             </div>
             <div class="col-md-2">
                 <ul class="list-group">
@@ -124,8 +113,7 @@
             </div>
         </div>
 
-
-        <div class="table-responsive">
+        <div>
             <table class="table table-striped table-bordered table-hover table-condensed" id="example">
                 <thead>
 
@@ -134,12 +122,12 @@
                     <th>Nombre</th>
                     <th>Correo</th>
                     <th>Universidad</th>
-                    <th>Cursos</th>
+                    <th>Curso G1</th>
+                    <th>Curso G2</th>
+                    <th>Curso G3</th>
                     <th>Vegetariano</th>
-                    <th>Examen PCCM</th>
                     <th>Aceptado</th>
                     <th>Confirmado</th>
-
                     <th>Ver</th>
                 </tr>
                 </thead>
@@ -150,22 +138,15 @@
                         <td>{{ registro.paterno |title ~ ' ' ~ registro.materno |title ~ ' ' ~ registro.nombre |title }}</td>
                         <td>{{ registro.mail }}</td>
                         <td>{{ registro.procedencia }}</td>
-                        <td>{{ registro.cursos }}</td>
+                        <td class="text-center">{{ registro.cursog1|slice(0,2) }}</td>
+                        <td class="text-center">{{ registro.cursog2|slice(0,2) }}</td>
+                        <td class="text-center">{{ registro.cursog3|slice(0,2) }}</td>
                         <td class="text-center">
                             {% if registro.vegetariano == true %}
                                 Si
                             {% else %}
                                 No
                             {% endif %}</td>
-
-                        <td class="text-center">{% if registro.examen == true %}
-                                <span class="label label-success "><i class="fa fa-check-square"></i> Si</span>
-
-                            {% elseif registro.examen == false %}
-                                <span class="label label-danger"><i class="fa fa-times-circle"></i> No</span>
-                            {% endif %}
-                        </td>
-
 
                         <td class="text-center">{% if registro.aceptado == true %}
                                 <span class="label label-success "><i class="fa fa-check-square"></i> Si</span>
@@ -175,7 +156,6 @@
                                 <span class="label label-danger"><i class="fa fa-times-circle"></i> No</span>
                             {% endif %}
                         </td>
-
                         <td class="text-center">{% if registro.confirmado %}<span class="label label-success"><i class="fa fa-check-square"></i> Si</span>{% else %}<span class="label label-danger"><i class="fa fa-times-circle"></i> No</span>{% endif %}</td>
                         <td class="text-center">
                             <a href="{{ path('form_show', { 'id': registro.id }) }}"><i class="fa fa-search-plus"></i></a>

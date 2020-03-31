@@ -180,9 +180,9 @@ class FormType extends AbstractType
             ->add('cursog2', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType',array(
                 'label'=>'*Selecciona tu curso de G2',
                 'choices'=>array(
-                    'A2- Construyendo el espacio-tiempo' => 'A2 - Construyendo el espacio-tiempo',
-                    'B2 - Geometría hiperbólica' => ' B2 - Geometría hiperbólica',
-                    'C2  - Introducción a la teoría estadística de los valores extremos' => 'C2 - Introducción a la teoría estadística de los valores extremos',
+                    'A2 - Construyendo el espacio-tiempo' => 'A2 - Construyendo el espacio-tiempo',
+                    'B2 - Geometría hiperbólica' => 'B2 - Geometría hiperbólica',
+                    'C2 - Introducción a la teoría estadística de los valores extremos' => 'C2 - Introducción a la teoría estadística de los valores extremos',
                 ),
                 'placeholder'=>'Seleccionar',
                 'required'=>true,
