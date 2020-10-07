@@ -20,7 +20,7 @@
             <p class="text-justify">-Al finalizar el envío de este formulario debes de visualizar una pantalla de confirmación. Además, recibirás un correo electrónico a la cuenta que proporcionaste,
                 de no ser así favor de revisar tu carpeta de correos no desados o comunicarte al correo <strong>webmaster@matmor.unam.mx</strong> para asegurarte que hayamos recibido tu solicitud.
             </p>
-            -Fecha límite para realizar tu registro: <mark>29 de mayo de 2020</mark>.
+            -Fecha límite para realizar tu registro: <mark>5 de diciembre de 2020</mark>.
         {% endblock %}
 
         {{ form_start(form) }}
@@ -97,13 +97,6 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-4" >
-                            <div class="form-group">
-                                <div>{{ form_label(form.tel) }}</div>
-                                <div>{{ form_widget(form.tel, {'attr': {'class': 'form-control input-sm', 'placeholder':'55 1234 5678'} } ) }}</div>
-                                <div>{{ form_errors(form.tel) }}</div><br>
-                            </div>
-                        </div>
 
                     </div>
                 </div>
@@ -113,11 +106,9 @@
 
         <h1><small><i class="fa fa-book"></i> Datos académicos</small></h1>
 
-
         <div class="panel panel-default">
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-lg-12">
                         <div class="form-group">
                             <div class="col-lg-4" >
                                 <div>{{ form_label(form.procedencia) }}</div>
@@ -178,7 +169,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
 
         <h1><small><i class="fa fa-clock-o"></i> Participaciones anteriores</small></h1>
@@ -219,26 +209,7 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="form-group">
-                        <div class="col-md-6" >
-                            <div>{{ form_label(form.beca) }}</div>
-                            <div>{{ form_widget(form.beca, {'attr': {'class': 'form-control input-sm'} } ) }}</div>
-                            <div>{{ form_errors(form.beca) }}</div>
-                        </div>
-                        <div class="col-md-6" >
-                            <div>{{ form_label(form.vegetariano) }}</div>
-                            <div>
-                                {% spaceless %}
-                                    {% for child in form.vegetariano %}
-                                        <div class="radio-inline">
-                                            {{ form_widget(child) }}  {{ form_label(child, null, {'label_attr': {'class': 'btn btn-default btn-xs'}}) }}
-                                        </div>
-                                    {% endfor %}
-                                {% endspaceless %}
-                            </div>
-                            <div>{{ form_errors(form.vegetariano) }}</div>
-                        </div>
-
-                        <div class="col-md-12"><br><p>El participante  deberá tomar tres cursos, las opciones a elegir son las siguientes:</p></div>
+                        <div class="col-md-12"><p>El participante  deberá tomar tres cursos, las opciones a elegir son las siguientes:</p></div>
                         <div class="col-md-6" >
                             <div>{{ form_label(form.cursog1) }}</div>
                             <a type="button"  class="btn btn-primary btn-xs" data-toggle="modal" data-target=".g1"><i class="fa fa-external-link" aria-hidden="true"></i>
@@ -275,13 +246,6 @@
                             <div>{{ form_widget(form.razones, {'attr': {'class': 'form-control input-sm', 'rows':'4', 'placeholder':'Razones por las que desea entrar a la escuela'} } ) }}</div>
                             <div>{{ form_errors(form.razones) }}</div>
                         </div>
-
-                        <div class="col-md-12" ><br>
-                            <div>{{ form_label(form.infadicional) }}</div>
-                            <div>{{ form_widget(form.infadicional, {'attr': {'class': 'form-control input-sm', 'rows':'4', 'placeholder':'Información adicional que desee darle a conocer al comité organizador, como alergias, alojamiento o problemas de salud'} } ) }}</div>
-                            <div>{{ form_errors(form.infadicional) }}</div><br>
-                        </div>
-
 
                     </div>
                 </div>
@@ -320,12 +284,11 @@
                         aparente simplicidad, el material tratado en el curso surge de un reciente acercamiento a la unificación
                         de la teoría cuántica con la relatividad general (pero casi no hablaremos de eso).</p>
                     <hr>
-                    <p><strong>B1 - El lema de Milnor-Schwarz, el teorema fundamental de la teoría geométrica de
-                            grupos, <em>Dr. Noé Bárcenas</em></strong></p>
-                    <p class="text-justify"><strong>Resumen:</strong> Analizaremos el que se conoce como el teorema fundamental de la teoría
-                        geométrica de grupos y daremos un panorama amplio de sus aplicaciones en geometría
-                        diferencial, topología de variedades, teoría de grupos, así como un vistazo a resultados en
-                        Rigidez.</p>
+                    <p><strong>B1 - Espacios Métricos y grupos,
+                             <em>Dr. Manuel Sedano Mendoza</em></strong></p>
+                    <p class="text-justify"><strong>Resumen:</strong> 
+                     En este minicurso daremos un paseo a la siguiente idea: usar la geometría de los espacios métricos para estudiar grupos. En la primera parte del curso veremos el concepto de Grafos de Cayley asociados a un grupo (finitamente generado), estos son espacios métricos en los que el grupo actúa de manera natural preservando distancias (acción isométrica intrínseca). En la segunda parte del curso veremos cómo, en el caso que el grupo esté actuando en algún espacio métrico con “buen comportamiento” (acción isométrica extrı́nseca), se relaciona la geometrı́a del espacio métrico dado con la de los grafos de Cayley, esta relación nos la da el Teorema de Schwarz-Milnor.
+                        </p>
                     <hr>
                     <p><strong>C1 - Introducción a la teoría de Caracteres de grupos finitos, <em>Dr. Gerardo Raggi Cárdenas</em></strong></p>
                     <p class="text-justify"><strong>Resumen:</strong>

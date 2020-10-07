@@ -85,21 +85,6 @@ class Form
     /**
      * @var string
      *
-     * @ORM\Column(name="tel", type="string", length=20)
-     * @Assert\Type(type="digit")
-     * @Assert\Length(
-     *      min = 10,
-     *      max = 15,
-     *      minMessage = "El teléfono debe contener mínimo {{ limit }} caracteres",
-     *      maxMessage = "El teléfono no puede se de más de {{ limit }} caracteres"
-     * )
-     */
-
-    private $tel;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="procedencia", type="string", length=100)
      * @Assert\NotBlank()
      */
@@ -248,13 +233,6 @@ class Form
     /**
      * @var bool
      *
-     * @ORM\Column(name="vegetariano", type="boolean", nullable=true)
-     */
-    private $vegetariano;
-
-    /**
-     * @var bool
-     *
      * @ORM\Column(name="aceptado", type="boolean", nullable=true)
      */
     private $aceptado;
@@ -273,14 +251,6 @@ class Form
     /**
      * @var string
      *
-     * @ORM\Column(name="beca", type="string", length=50)
-     * @Assert\NotBlank()
-     */
-    private $beca;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="razones", type="text")
      * @Assert\NotBlank()
      * @Assert\Length(
@@ -289,18 +259,6 @@ class Form
      * )
      */
     private $razones;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="infadicional", type="text" , nullable=true)
-     * @Assert\Length(
-     *      max = 2000,
-     *      maxMessage = "No se permiten más de {{ limit }} caracteres"
-     * )
-     */
-    private $infadicional;
-
 
     /**
      * @var string
@@ -490,29 +448,6 @@ class Form
     public function getMail()
     {
         return $this->mail;
-    }
-
-    /**
-     * Set tel
-     *
-     * @param string $tel
-     * @return Form
-     */
-    public function setTel($tel)
-    {
-        $this->tel = $tel;
-
-        return $this;
-    }
-
-    /**
-     * Get tel
-     *
-     * @return string 
-     */
-    public function getTel()
-    {
-        return $this->tel;
     }
 
     /**
@@ -723,22 +658,6 @@ class Form
     }
 
     /**
-     * @return bool
-     */
-    public function isVegetariano()
-    {
-        return $this->vegetariano;
-    }
-
-    /**
-     * @param bool $vegetariano
-     */
-    public function setVegetariano($vegetariano)
-    {
-        $this->vegetariano = $vegetariano;
-    }
-
-    /**
      * @return string
      */
     public function getCursog1()
@@ -807,29 +726,6 @@ class Form
     public function getEvento()
     {
         return $this->evento;
-    }
-
-    /**
-     * Set beca
-     *
-     * @param string $beca
-     * @return Form
-     */
-    public function setBeca($beca)
-    {
-        $this->beca = $beca;
-
-        return $this;
-    }
-
-    /**
-     * Get beca
-     *
-     * @return string 
-     */
-    public function getBeca()
-    {
-        return $this->beca;
     }
 
     /**
@@ -1069,24 +965,6 @@ class Form
     {
         $this->slug = $slug;
     }
-
-    /**
-     * @return string
-     */
-    public function getInfadicional()
-    {
-        return $this->infadicional;
-    }
-
-    /**
-     * @param string $infadicional
-     */
-    public function setInfadicional($infadicional)
-    {
-        $this->infadicional = $infadicional;
-    }
-
-
 
 
 }

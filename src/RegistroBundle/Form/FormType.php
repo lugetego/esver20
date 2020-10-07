@@ -58,12 +58,6 @@ class FormType extends AbstractType
 
             ))
 
-            ->add('tel','Symfony\Component\Form\Extension\Core\Type\TextType',array(
-                'label'=>'*Teléfono para comunicarse en caso de emergencia',
-                'required'=>true,
-
-            ))
-
             ->add('procedencia', 'Symfony\Component\Form\Extension\Core\Type\TextType',array(
                 'label'=>'*Universidad de procedencia',
                 'required'=>true,
@@ -80,7 +74,7 @@ class FormType extends AbstractType
 
             ))
             ->add('porcentaje', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType',array(
-                'label'=>'*Porcentaje de avance (hasta marzo 2020)',
+                'label'=>'*Porcentaje de avance (hasta noviembre 2020)',
                 'choices'=>array(
                     '50'=>'50',
                     '60'=>'60',
@@ -138,7 +132,7 @@ class FormType extends AbstractType
 
             ))
             ->add('historialFile', 'vich_file', array(
-                'required'=> true,
+                'required'=> false,
                 'label' => 'Historial académico'
             ))
 
@@ -157,20 +151,11 @@ class FormType extends AbstractType
                 'choices_as_values' => false,
 
             ))
-            ->add('vegetariano', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', array(
-                'choices'=>array(
-                    true=>'Si ',
-                    false=>'No '),
-                'expanded'=>true,
-                'required'=>true,
-                'label'=>'*¿Deseas comida vegetariana?',
-                'choices_as_values' => false,
-            ))
             ->add('cursog1', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType',array(
                 'label'=>'*Selecciona tu curso de G1',
                 'choices'=>array(
                     'A1 - ¿Cómo construir teoría física?' => 'A1 - ¿Cómo construir teoría física?',
-                    'B1 - “El lema de Milnor-Schwarz, el teorema fundamental de la teoría geométrica de grupos”' => 'B1 - “El lema de Milnor-Schwarz, el teorema fundamental de la teoría geométrica de grupos”',
+                    'B1 - “Espacios Métricos y grupos”' => 'B1 - “Espacios Métricos y grupos”',
                     'C1 - “Introducción a la teoría de Caracteres de grupos finitos”' => 'C1 - “Introducción a la teoría de Caracteres de grupos finitos”',
                 ),
                 'placeholder'=>'Seleccionar',
@@ -203,24 +188,8 @@ class FormType extends AbstractType
                 'label'=>'En caso afirmativo, escriba el año, el nombre del evento y el lugar:',
                 'required'=>false,
             ))
-            ->add('beca', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', array(
-                'label'=>'*Beca',
-                'choices'=>array(
-                    'Solamente alimentación'=>'Solamente alimientación',
-                    'Solamente hospedaje'=>'Solamente hospedaje',
-                    'Hospedaje y alimentación'=>'Hospedaje y alimentación',
-                    'Ninguno'=>'Ninguno'),
-                'placeholder' => 'Seleccionar',
-                'choices_as_values' => true,
-
-            ))
             ->add('razones', 'Symfony\Component\Form\Extension\Core\Type\TextareaType',array(
                 'label'=>'*Razones por las que deseas entrar a la escuela',
-                'required'=>true,
-
-            ))
-            ->add('infadicional', 'Symfony\Component\Form\Extension\Core\Type\TextareaType',array(
-                'label'=>'Información adicional que desee darle a conocer al comité organizador, como alergias, alojamiento o problemas de salud',
                 'required'=>true,
 
             ))
